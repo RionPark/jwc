@@ -2,7 +2,7 @@ package d20200624.이상화;
 
 public class Book extends BookStore {
 	public void book(){
-		System.out.println("책이름 : "+bookName+"\r책가격 : "+bookPrice+"\r저자 :"+writer+"\r");
+		System.out.println("bookname : "+bookName+"\r책가격 : "+bookPrice+"\r저자 :"+writer+"\r");
 	}
 	
 	public static void main(String[] args) {
