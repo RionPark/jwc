@@ -1,20 +1,18 @@
-<<<<<<< HEAD
-﻿1.접근제어자의 범위를 큰순서에 맞게 나열한것은? 		
-=======
-﻿1.접근제어자의 범위를 큰순서에 맞게 나열한것은? 
->>>>>>> branch 'master' of https://github.com/RionPark/jwc.git
+﻿1.접근제어자의 범위를 큰순서에 맞게 나열한것은? - [3]		
  1) protected>public>default>private		
  2) private>default>protected>public		
  3) public>protected>default>private		
  4) public>default>protected>private		
-		
-2. 다음중 오버라이딩의 설명으로 틀린 것은? 		
+
+
+2. 다음중 오버라이딩의 설명으로 틀린 것은? - [1,2,3]		
  1) 접근제어자를 상위 클래스보다 더 작은 범위로 만들수 있다.		
  2) 리턴타입은 상관이 없다.		
  3) 파라메터의 갯수와 상관이 없다.		
  4) 오버라이딩은 상속에서만 가능한 개념이다.		
- 		
-3. 오버로딩의 정의를 서술해주세요.?		
+
+
+3. 오버로딩의 정의를 서술해주세요.? 	
 		
 interface Car{		
 }		
@@ -22,13 +20,16 @@ class Kia implements Car{
 }		
 class Hyundai implements Car{		
 }		
-5. 위의 코드를 보고 아래의 보기중에 오류가 나는것을 고르시오.		
+[클래스 필드에서 만든 메소드의 이름이 같을때, 파라메터값을 다르게 하거나 파라메터값이 같아도 순서가 다르면 사용할 수 있게 해주는 기능]	
+
+5. 위의 코드를 보고 아래의 보기중에 오류가 나는것을 고르시오. - [4번]		
    1. Car c = new Kia();		
    2. Car c = new Hyundai();		
    3. Car c = new Car();		
-   5. Kia k = new Hyundai();		
-		
-6. 모든 클래스가 상속받는 클래스를 작성해주세요[                       ]		
+   4. Kia k = new Hyundai();
+
+ 
+6. 모든 클래스가 상속받는 클래스를 작성해주세요 - [Class.Object]		
 		
  - 아래의 실행결과를 작성해주세요.		
 class Exam{		
@@ -36,8 +37,12 @@ class Exam{
 		System.out.println("123"=="123");
 		System.out.println("123".equals("123");
 	}	
-}		
-7. [            ]		8. [            ]
+}
+
+
+7. [false]		8. [true]
+
+
  - 아래의 코드를 보고 올바른답을 서술하시오.		
 class Robot{		
 	void shoot(){	
@@ -53,6 +58,8 @@ class Gundam extends Robot{
 		gun.shoot();
 	}	
 }		
+
 9. Gundam의 shoot()메소드는 현재 오버라이딩 된것인가 오버로딩 된것인가?		
+[오버라이딩]		
 		
-10. 위코드의 실행결과를 작성해주세요.[                        ]		
+10. 위코드의 실행결과를 작성해주세요.[건담의 슈팅]		
