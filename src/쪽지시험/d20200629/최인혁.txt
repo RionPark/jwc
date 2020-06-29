@@ -1,4 +1,4 @@
-﻿40 점.... 공부진짜 열심히해야지 다리가없음 무릎으로라도!
+﻿50 점.... 공부진짜 열심히해야지 다리가없음 무릎으로라도!
 1.접근제어자의 범위를 큰순서에 맞게 나열한것은? 3		
  1) protected>public>default>private		
  2) private>default>protected>public		
