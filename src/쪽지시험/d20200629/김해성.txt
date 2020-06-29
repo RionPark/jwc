@@ -1,23 +1,21 @@
-﻿60점
+김해성 20200629
 
-1.접근제어자의 범위를 큰순서에 맞게 나열한것은? (3)		
+
+1.접근제어자의 범위를 큰순서에 맞게 나열한것은? 3		
  1) protected>public>default>private		
  2) private>default>protected>public		
  3) public>protected>default>private		
  4) public>default>protected>private		
 		
-2. 다음중 오버라이딩의 설명으로 틀린 것은? (2)		
+2. 다음중 오버라이딩의 설명으로 틀린 것은? 		2,3
  1) 접근제어자를 상위 클래스보다 더 작은 범위로 만들수 있다.		
  2) 리턴타입은 상관이 없다.		
  3) 파라메터의 갯수와 상관이 없다.		
  4) 오버라이딩은 상속에서만 가능한 개념이다.		
  		
-3. 오버로딩의 정의를 서술해주세요.?	
-1)같은 범위 내에 있어야 합니다.
-2)같은 메서드 명을 가져야 합니다.
-3)파라메터 갯수가 달라야 합니다.
-4)파라메터 갯수가 같더라도 데이터 타입이 달라야 합니다.
-5)파라메터 갯수와 타입이 같더라도 순서가 다르면 됩니다.	
+3. 오버로딩의 정의를 서술해주세요.?		
+		1. 동일한 이름을 가진 메소드에 여러기능을 정의하여 사용되는 메소드 (메소드명동일, 파라미터값에서 타입이 달라야 한다. type이 같을 경우 순서가 달라야 하며,추가된 type이 있어야 한다.
+		
 		
 interface Car{		
 }		
@@ -25,13 +23,13 @@ class Kia implements Car{
 }		
 class Hyundai implements Car{		
 }		
-5. 위의 코드를 보고 아래의 보기중에 오류가 나는것을 고르시오. (4)		
+5. 위의 코드를 보고 아래의 보기중에 오류가 나는것을 고르시오.		4
    1. Car c = new Kia();		
    2. Car c = new Hyundai();		
    3. Car c = new Car();		
    4. Kia k = new Hyundai();		
 		
-6. 모든 클래스가 상속받는 클래스를 작성해주세요[    Object     ]		
+6. 모든 클래스가 상속받는 클래스를 작성해주세요[          object 오브젝트             ]		
 		
  - 아래의 실행결과를 작성해주세요.		
 class Exam{		
@@ -40,7 +38,7 @@ class Exam{
 		System.out.println("123".equals("123");
 	}	
 }		
-7. [ true<주소 비교지만 값이 같아 같은곳을 바라봄>  ] 8. [ true - )가 없어서 에러 <값을비교> ]
+7. [    false      ]		8. [   컴파일에러 /괄호 있을시 true        ]
  - 아래의 코드를 보고 올바른답을 서술하시오.		
 class Robot{		
 	void shoot(){	
@@ -52,10 +50,9 @@ class Gundam extends Robot{
 		System.out.println("건담의 슈팅");
 	}	
 	public static void main(String args[]){	
-		Gundam gun = new Gundam();
 		gun.shoot();
 	}	
 }		
-9. Gundam의 shoot()메소드는 현재 오버라이딩 된것인가 오버로딩 된것인가?	 오버라이딩된것 입니다.	
+9. Gundam의 shoot()메소드는 현재 오버라이딩 된것인가 오버로딩 된것인가?		오버라이딩
 		
-10. 위코드의 실행결과를 작성해주세요.[    실행은 되지만 아무 결과값이 나오지 않습니다.     ]		
+10. 위코드의 실행결과를 작성해주세요.[  gun이라는 메모리 생성 안됨 메소드 실행 불가 (된다면 건담의 슛팅)  ]		

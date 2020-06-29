@@ -12,8 +12,11 @@ public class Book extends BookStore {
 		b.bookName = "개미";
 		b.bookPrice = 32000;
 		b.writer = "베르나르베르베르";
-		b.book();
-		bs.book();
+//		b.book();
+//		bs.book();
+		BookStore ad = (Book) bs;
+		
+		ad.book();
 
 	}
 
