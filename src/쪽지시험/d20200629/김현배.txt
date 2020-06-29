@@ -34,7 +34,7 @@ class Exam{
 		System.out.println("123".equals("123");
 	}	
 }		
-7. [   true     ]		8. [    컴파일오류     ]
+7. [   컴파일오류     ]		8. [    컴파일오류     ]
  - 아래의 코드를 보고 올바른답을 서술하시오.		
 class Robot{		
 	void shoot(){	
