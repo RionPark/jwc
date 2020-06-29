@@ -2,6 +2,7 @@ package d20200624.이상화;
 
 public class Book extends BookStore {
 	public void book(){
+		/**아오 이거 내파일일건데~~**/
 		System.out.println("책이름 : "+bookName+"\r책가격 : "+bookPrice+"\r저자 :"+writer+"\r");
 	}
 	
