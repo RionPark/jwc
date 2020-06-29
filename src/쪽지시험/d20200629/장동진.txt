@@ -1,4 +1,4 @@
-
+﻿
 60점
 
 
@@ -55,12 +55,12 @@ class Exam{
 7.      전체를 수정해서 작성했습니다.X
 
 class Robot{		
-	 void shoot()	{	
+	public void shoot()	{	
 		System.out.println("로봇의 슈팅");
 			}	
 		
 class Gundam extends Robot {		
- void shoot()	{	
+	public void shoot()	{	
 		System.out.println("건담의 슈팅");
 			}
 	}
