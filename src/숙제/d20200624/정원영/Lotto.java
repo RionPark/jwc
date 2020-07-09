@@ -25,13 +25,13 @@ class NumLotto {
 
 	List<Integer> lottoAlignment(List<Integer> num) {
 		
-		int wap = 0;
+		int swap = 0;
 		for (int i = 0; i < num.size(); i++) {
 			for (int j = 0; j < i; j++) {
 				if (num.get(i) < num.get(j)) {
-					wap = num.get(i);
+					swap = num.get(i);
 					num.set(i, num.get(j));
-					num.set(j, wap);
+					num.set(j, swap);
 				}
 			}
 		}
