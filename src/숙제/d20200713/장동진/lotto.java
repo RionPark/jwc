@@ -8,7 +8,7 @@ public class lotto {
 
 		Random r = new Random();
 		int[] lonum = new int[6];
-	
+
 		for (int i = 0; i < lonum.length; i++) {
 
 			lonum[i] = r.nextInt(45) + 1;
@@ -21,37 +21,32 @@ public class lotto {
 
 		}
 		System.out.print("정렬 전 로또 번호 : ");
-		for(int i = 0;i<lonum.length;i++) {
-			
-			System.out.print(lonum[i]+" ");
-			
+		for (int i = 0; i < lonum.length; i++) {
+
+			System.out.print(lonum[i] + " ");
+
 		}
-		
-		
+
 		System.out.print("\n정렬 후 로또 번호 : ");
-		
-		for(int  i = lonum.length;i>0;i--) {
-			
-			for(int j=0;j<i-1;j++) {
-				
-				if(lonum[j]> lonum[j+1]) {
-				int tmp = lonum[j];
-				lonum[j] = lonum[j+1];
-				lonum[j+1] = tmp;
+
+		for (int i = lonum.length; i > 0; i--) {
+
+			for (int j = 0; j < i - 1; j++) {
+
+				if (lonum[j] > lonum[j + 1]) {
+					int tmp = lonum[j];
+					lonum[j] = lonum[j + 1];
+					lonum[j + 1] = tmp;
 				}
-				
+
 			}
-			
-			
+
 		}
-		
-		
-		for(int i = 0 ; i<lonum.length;i++) {
-			
-			
-			System.out.print(lonum[i]+" ");
+
+		for (int i = 0; i < lonum.length; i++) {
+
+			System.out.print(lonum[i] + " ");
 		}
-		
 
 	}
 
