@@ -10,7 +10,7 @@ public class Lotto {
 		List<Integer> numList = new ArrayList<>();
 		Random r = new Random();
 		for (int i=0;i<6;i++) {
-			numList.add(i,r.nextInt(45)+1);
+			numList.add(r.nextInt(45)+1);
 			
 			for(int j=i-1;j>=0;j--) {
 				if(numList.get(j)==numList.get(i)) {
