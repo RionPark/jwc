@@ -1,4 +1,4 @@
-package 숙제.d20200713나원준;
+package 숙제.d20200713.나원준;
 
 import java.util.Random;
 
