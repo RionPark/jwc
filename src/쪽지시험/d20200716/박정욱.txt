@@ -3,7 +3,7 @@ interface Test{
 }
 1.위 코드에서 test()메서드의 접근제어자는?[public ]	
 		
-2. 다음중 오버로딩의 설명으로 틀린 것은?  1,3,4	
+2. 다음중 오버로딩의 설명으로 틀린 것은?  1,3,4	정답은 1,3 
  1) 접근제어자자가 반드시 같아야 한다.	
  2) 리턴타입은 상관이 없다.		
  3) 파라메터의 갯수와 상관이 없다.		
@@ -15,10 +15,10 @@ interface Test{
 		map.put(4, "1");
 		map.put(3, "3");
 		map.put(2, "4");
-		Iterator<Integer> keys = [3.map.keySet.iterator() ];
+		Iterator<Integer> keys = [3.map.keySet.iterator() ];    정답:map.keySet().iterator()
 		while([4. keys.hasNext() ]) {
-			Integer key = [5.  map.nextln()   ];
-			String value = [6.    map.get(key)  ];
+			Integer key = [5.  map.nextln()   ]; 정답:keys.next()
+			String value = [6.    map.get(key)  ]; 
 			System.out.println(key + "," + value);
 		} 
 	}
@@ -51,7 +51,7 @@ class Exam{
 		try {
 			con =  DriverManager.getConnection(url,id,pwd);
 			stmt = [10. con.crateStatement();         ]
-			[11. rs = stmt.executeQuery();            ]
+			[11. rs = stmt.executeQuery("select*from member");            ]다른답:String sql="select*from member
 			while(rs.next()){
 				System.out.print(rs.getInt("num"));
 				System.out.print(rs.getString("name"));
