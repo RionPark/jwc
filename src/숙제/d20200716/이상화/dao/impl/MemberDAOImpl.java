@@ -1,4 +1,4 @@
-package 숙제.d20200716.이상화.impl;
+package 숙제.d20200716.이상화.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,8 +9,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import 숙제.d20200716.이상화.Connector;
-import 숙제.d20200716.이상화.MemberDAO;
+import 숙제.d20200716.이상화.common.Connector;
+import 숙제.d20200716.이상화.dao.MemberDAO;
+
 
 public class MemberDAOImpl implements MemberDAO {
 

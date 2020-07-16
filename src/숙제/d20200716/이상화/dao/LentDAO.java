@@ -1,4 +1,4 @@
-package 숙제.d20200716.이상화;
+package 숙제.d20200716.이상화.dao;
 
 import java.util.List;
 import java.util.Map;
