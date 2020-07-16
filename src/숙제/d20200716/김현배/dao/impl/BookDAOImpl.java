@@ -9,8 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import 숙제.d20200716.김현배.common.Connector;
 import 숙제.d20200716.김현배.dao.BookDAO;
+import 숙제.d20200716.김현배.dao.Connector;
 
 
 public class BookDAOImpl implements BookDAO {
@@ -132,7 +132,7 @@ public class BookDAOImpl implements BookDAO {
 	}
 
 	@Override
-	public List<Map<String, Object>> selectBook(Map<String, Object> book) {
+	public List<Map<String, Object>> selectBookList(Map<String, Object> book) {
 		List<Map<String, Object>> bookList = new ArrayList<>();
 		Connection conn = null;
 		PreparedStatement ps = null;

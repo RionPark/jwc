@@ -1,4 +1,4 @@
-package 숙제.d20200716.김상영;
+package 숙제.d20200716.김상영.Impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import 숙제.d20200716.김상영.BookDAO;
 
 
 public class BookDAOImpl implements BookDAO {

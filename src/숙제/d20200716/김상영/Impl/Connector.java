@@ -1,4 +1,4 @@
-package 숙제.d20200716.김상영;
+package 숙제.d20200716.김상영.Impl;
 
 import java.sql.Statement;
 import java.sql.Connection;

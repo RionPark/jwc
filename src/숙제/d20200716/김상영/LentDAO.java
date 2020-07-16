@@ -1,10 +1,9 @@
-package 숙제.d20200716.김현배.dao;
+package 숙제.d20200716.김상영;
 
 import java.util.List;
 import java.util.Map;
 
 public interface LentDAO {
-
 	int insertLent(Map<String,Object> lent);
 	int updateLent(Map<String,Object> lent);
 	int deleteLent(int lNum);

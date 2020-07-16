@@ -1,10 +1,9 @@
-package 숙제.d20200716.김현배.dao;
+package 숙제.d20200716.김상영;
 
 import java.util.List;
 import java.util.Map;
 
 public interface MemberDAO {
-
 	int insertMember(Map<String,Object> member);
 	int updateMember(Map<String,Object> member);
 	int deleteMember(int mNum);
