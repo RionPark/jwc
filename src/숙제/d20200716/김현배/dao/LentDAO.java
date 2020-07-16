@@ -8,6 +8,6 @@ public interface LentDAO {
 	int insertLent(Map<String,Object> lent);
 	int updateLent(Map<String,Object> lent);
 	int deleteLent(int lNum);
-	List<Map<String,Object>> selectLent(Map<String,Object> lent);
+	List<Map<String,Object>> selectLentList(Map<String,Object> lent);
 	Map<String,Object> selectLent(int lNum);
 }

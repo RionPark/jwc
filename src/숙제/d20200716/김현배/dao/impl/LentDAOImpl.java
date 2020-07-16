@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import 숙제.d20200716.김현배.common.Connector;
+import 숙제.d20200716.김현배.dao.Connector;
 import 숙제.d20200716.김현배.dao.LentDAO;
 
 
@@ -121,7 +121,7 @@ public class LentDAOImpl implements LentDAO {
 	}
 
 	@Override
-	public List<Map<String, Object>> selectLent(Map<String, Object> lent) {
+	public List<Map<String, Object>> selectLentList(Map<String, Object> lent) {
 		List<Map<String, Object>> mList = new ArrayList<>();
 		Connection conn = null;
 		PreparedStatement ps = null;
