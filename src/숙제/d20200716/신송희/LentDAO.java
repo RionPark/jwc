@@ -1,13 +1,13 @@
-package 숙제.d20200716.김현배.dao;
+package 숙제.d20200716.신송희;
 
 import java.util.List;
 import java.util.Map;
 
-public interface LentDAO {
-
+public interface LentDAO
+{
 	int insertLent(Map<String,Object> lent);
 	int updateLent(Map<String,Object> lent);
 	int deleteLent(int lNum);
-	List<Map<String,Object>> selectLentList(Map<String,Object> lent);
+	List<Map<String,Object>> selectLent(Map<String,Object> lent);
 	Map<String,Object> selectLent(int lNum);
 }

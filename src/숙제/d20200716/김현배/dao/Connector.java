@@ -1,4 +1,4 @@
-package 숙제.d20200716.김현배.common;
+package 숙제.d20200716.김현배.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
