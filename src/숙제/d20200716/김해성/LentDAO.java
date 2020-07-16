@@ -1,0 +1,14 @@
+package 숙제.d20200716.김해성;
+
+import java.util.List;
+import java.util.Map;
+
+public interface LentDAO {
+
+	int insertLent(Map<String,Object> lent);
+	int updateLent(Map<String,Object> lent);
+	int deleteLent(int lnum);
+	List<Map<String,Object>> selectLentList(Map<String,Object> lent);
+	Map<String,Object> selectlent(int lent);
+
+}
