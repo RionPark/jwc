@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import 숙제.d20200716.김현배.dao.Connector;
+import 숙제.d20200716.김현배.common.Connector;
 import 숙제.d20200716.김현배.dao.MemberDAO;
 
 
@@ -30,7 +30,6 @@ public class MemberDAOImpl implements MemberDAO {
 			ps.setString(3, member.get("m_pwd").toString());
 			result = ps.executeUpdate();
 			conn.commit();
-			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -49,7 +48,7 @@ public class MemberDAOImpl implements MemberDAO {
 				}
 			}
 		}
-		return 0;
+		return result;
 	}
 
 	@Override
@@ -71,7 +70,6 @@ public class MemberDAOImpl implements MemberDAO {
 			ps.setInt(4, (int)member.get("m_num"));
 			result = ps.executeUpdate();
 			conn.commit();
-			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -90,7 +88,7 @@ public class MemberDAOImpl implements MemberDAO {
 				}
 			}
 		}
-		return 0;
+		return result;
 	}
 
 	@Override
@@ -105,7 +103,6 @@ public class MemberDAOImpl implements MemberDAO {
 			ps.setInt(1, mNum);
 			result = ps.executeUpdate();
 			conn.commit();
-			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -124,7 +121,7 @@ public class MemberDAOImpl implements MemberDAO {
 				}
 			}
 		}
-		return 0;
+		return result;
 	}
 
 	@Override
@@ -147,7 +144,6 @@ public class MemberDAOImpl implements MemberDAO {
 				mMap.put("m_joindate", rs.getString("m_joindate").toString());
 				mList.add(mMap);
 			}
-			return mList;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -173,7 +169,7 @@ public class MemberDAOImpl implements MemberDAO {
 				}
 			}
 		}
-		return null;
+		return mList;
 	}
 
 	@Override
@@ -187,6 +183,7 @@ public class MemberDAOImpl implements MemberDAO {
 			String sql = "select m_num, m_name, m_id, m_pwd, m_joindate from member ";
 			sql += " where m_num = ?";
 			ps = conn.prepareStatement(sql);
+			ps.setInt(1, mNum);
 			rs = ps.executeQuery();
 			if (rs.next()) {
 				mMap.put("m_num", rs.getInt("m_num"));
@@ -195,7 +192,6 @@ public class MemberDAOImpl implements MemberDAO {
 				mMap.put("m_pwd", rs.getString("m_pwd").toString());
 				mMap.put("m_joindate", rs.getString("m_joindate").toString());
 			}
-			return mMap;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -221,7 +217,7 @@ public class MemberDAOImpl implements MemberDAO {
 				}
 			}
 		}
-		return null;
+		return mMap;
 	}
 	public static void main(String[] args) {
 		Map<String, Object> map = new HashMap<>();

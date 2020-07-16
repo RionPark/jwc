@@ -9,8 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import 숙제.d20200716.김현배.common.Connector;
 import 숙제.d20200716.김현배.dao.BookDAO;
-import 숙제.d20200716.김현배.dao.Connector;
 
 
 public class BookDAOImpl implements BookDAO {
@@ -30,7 +30,6 @@ public class BookDAOImpl implements BookDAO {
 			ps.setString(3, book.get("b_desc").toString());
 			result = ps.executeUpdate();
 			conn.commit();
-			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -49,7 +48,7 @@ public class BookDAOImpl implements BookDAO {
 				}
 			}
 		}
-		return 0;
+		return result;
 	}
 
 	@Override
@@ -74,7 +73,6 @@ public class BookDAOImpl implements BookDAO {
 			ps.setInt(4, (int)book.get("b_num"));
 			result = ps.executeUpdate();
 			conn.commit();
-			return result;
 		}catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -93,7 +91,7 @@ public class BookDAOImpl implements BookDAO {
 				}
 			}
 		}
-		return 0;
+		return result;
 	}
 
 	@Override
@@ -109,7 +107,6 @@ public class BookDAOImpl implements BookDAO {
 			ps.setInt(1, bNum);
 			result = ps.executeUpdate();
 			conn.commit();
-			return result;
 		}catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -128,7 +125,7 @@ public class BookDAOImpl implements BookDAO {
 				}
 			}
 		}
-		return 0;
+		return result;
 	}
 
 	@Override
@@ -151,7 +148,6 @@ public class BookDAOImpl implements BookDAO {
 				map.put("b_desc", rs.getString("b_desc"));
 				bookList.add(map);
 			}
-			return bookList;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -177,7 +173,7 @@ public class BookDAOImpl implements BookDAO {
 				}
 			}
 		}
-		return null;
+		return bookList;
 	}
 
 	@Override
@@ -200,7 +196,6 @@ public class BookDAOImpl implements BookDAO {
 				book.put("b_credat", rs.getString("b_credat"));
 				book.put("b_desc", rs.getString("b_desc"));
 			}
-			return book;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -226,7 +221,7 @@ public class BookDAOImpl implements BookDAO {
 				}
 			}
 		}
-		return null;
+		return book;
 	}
 
 	public static void main(String[] args) {
