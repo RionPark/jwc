@@ -9,11 +9,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import 숙제.d20200716.김현배.common.Connector;
+import 숙제.d20200716.김현배.dao.Connector;
 import 숙제.d20200716.김현배.dao.MemberDAO;
 
 
-public class MemberDAOimpl implements MemberDAO {
+public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public int insertMember(Map<String, Object> member) {
@@ -128,7 +128,7 @@ public class MemberDAOimpl implements MemberDAO {
 	}
 
 	@Override
-	public List<Map<String, Object>> selectMember(Map<String, Object> member) {
+	public List<Map<String, Object>> selectMemberList(Map<String, Object> member) {
 		List<Map<String, Object>> mList = new ArrayList<>();
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -233,13 +233,13 @@ public class MemberDAOimpl implements MemberDAO {
 		map.put("m_id", "gusqoekt");
 		map.put("m_pwd", "123456789");
 		map.put("m_num", "1");
-		MemberDAOimpl mdao = new MemberDAOimpl();
+		MemberDAOImpl mdao = new MemberDAOImpl();
 		mdao.deleteMember(22);
-		System.out.println(mdao.selectMember(map));
+		System.out.println(mdao.selectMemberList(map));
 		mdao.updateMember(upMap);
-		System.out.println(mdao.selectMember(map));
+		System.out.println(mdao.selectMemberList(map));
 		mdao.insertMember(map);
-		System.out.println(mdao.selectMember(map));
+		System.out.println(mdao.selectMemberList(map));
 				
 	}
 	

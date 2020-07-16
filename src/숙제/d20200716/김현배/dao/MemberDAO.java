@@ -8,6 +8,6 @@ public interface MemberDAO {
 	int insertMember(Map<String,Object> member);
 	int updateMember(Map<String,Object> member);
 	int deleteMember(int mNum);
-	List<Map<String,Object>> selectMember(Map<String,Object> member);
+	List<Map<String,Object>> selectMemberList(Map<String,Object> member);
 	Map<String,Object> selectMember(int mNum);
 }
