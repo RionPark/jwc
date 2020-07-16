@@ -41,7 +41,7 @@ public class LentDAOImpl implements LentDAO {
 				e.printStackTrace();
 			}
 		}
-		return 0;
+		return result;
 	}
 
 	@Override
@@ -132,6 +132,9 @@ public class LentDAOImpl implements LentDAO {
 			try {
 				if(ps!=null) {
 					ps.close();
+				}
+				if(con!=null) {
+					con.close();
 				}
 			}catch(SQLException e) {
 				e.printStackTrace();
