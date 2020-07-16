@@ -1,0 +1,75 @@
+항상 부족한제자들 챙겨주시느라 고생이 많으십니다!^^
+
+interface Test{
+	void test();
+}
+1.위 코드에서 test()메서드의 접근제어자는?[    public   ]	
+		
+2. 다음중 오버로딩의 설명으로 틀린 것은? 	2,3	
+ 1) 접근제어자자가 반드시 같아야 한다.	
+ 2) 리턴타입은 상관이 없다.		
+ 3) 파라메터의 갯수와 상관이 없다.		
+ 4) 오버로딩은 상속에서만 가능한 개념이다.		
+ 			
+ - 아래의 코드는 맵이 가지고 있는 모든 값을 출력하려는 코드입니다.[  ]를 완성해주세요.
+	public static void main(String[] args) {
+		Map<Integer,String> map = new HashMap<>();
+		map.put(4, "1");
+		map.put(3, "3");
+		map.put(2, "4");
+		Iterator<Integer> keys = [3.map.keySet().iterator() ];
+		while([4.keys.hasNext  ]) {
+			Integer key = [5.   keys.next          ];
+			String value = [6.       map.get(key)     ];
+			System.out.println(key + "," + value);
+		} 
+	}
+	
+ - 아래의 실행결과를 작성해주세요.		
+class Exam{		
+	public static void main(String[] args){	
+		Set<String> strSet = new HashSet<>();
+		strSet.add("1");
+		strSet.add("1");
+		System.out.println(strSet.size());
+		strSet.add("2");
+		System.out.println(strSet.size());
+	}	
+}		
+7. [       1     ]		8. [    1        ]
+ - 아래의 코드는 데이터베이스해 테이블 조회, 모든 컬럼을 출력하는 코드입니다.
+ [  ]를 완성해주세요.	
+ - table이름은 member
+ - 컬럼 정보는 : num number(10), name varchar2(100), id varchar2(100) 
+	public static void main(String[] args) {
+		try {
+			[9.class.forName("oracl.jdbc.driver.OracleDriver")  ]
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		Connection con = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			con =  DriverManager.getConnection(url,id,pwd);
+			stmt = [10.con.createStatement();  ]
+			[11. ResultSet rs = con.createStatement().executeQuery           ]
+			while(rs.next()){
+				System.out.print(rs.getInt("num"));
+				System.out.print(rs.getString("name"));
+				System.out.println([12.                ]);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			if(rs!=null){
+				[13.         rs.close();        ]
+			}
+			if(stmt!=null){
+				[14.       stmt.close();          ]
+			}
+			if(con!=null){
+				[15.           con.close();      ]
+			}
+		}
+	}
