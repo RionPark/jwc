@@ -20,14 +20,9 @@ public class lotto {
 			}
 
 		}
-		System.out.print("정렬 전 로또 번호 : ");
-		for (int i = 0; i < lonum.length; i++) {
-
-			System.out.print(lonum[i] + " ");
-
-		}
-
-		System.out.print("\n정렬 후 로또 번호 : ");
+		
+	
+	
 
 		for (int i = lonum.length; i > 0; i--) {
 
