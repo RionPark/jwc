@@ -1,4 +1,4 @@
-package 숙제.d20200716.이상화.impl;
+package 숙제.d20200716.장재민.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,9 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import 숙제.d20200716.이상화.BookDAO;
-import 숙제.d20200716.이상화.Connector;
-
+import 숙제.d20200716.장재민.BookDAO;
 
 public class BookDAOImpl implements BookDAO {
 
@@ -22,29 +20,29 @@ public class BookDAOImpl implements BookDAO {
 		int result = 0;
 		try {
 			con = Connector.open();
-			String sql = "insert into book(b_num, b_title, b_author, b_credat, b_desc)";
-			sql += " values(seq_book_b_num.nextval, ?, ?, sysdate, ?)";
+			String sql = "insert into book(b_num, b_tile, b_author, b_credat, b_desc)";
+			sql += " values(seq_book_b_num.nextval, ?,?,sysdate,?)";
 			ps = con.prepareStatement(sql);
-			ps.setString(1, book.get("b_title").toString());
+			ps.setString(1, book.get("b_tile").toString());
 			ps.setString(2, book.get("b_author").toString());
 			ps.setString(3, book.get("b_desc").toString());
 			result = ps.executeUpdate();
 			con.commit();
-		} catch (Exception e) {
+		}catch(Exception e) {
 			e.printStackTrace();
-		} finally {
+		}finally {
 			try {
-				if (ps != null) {
+				if(ps!=null) {
 					ps.close();
 				}
-				if (con != null) {
+				if(con!=null) {
 					con.close();
 				}
-			} catch (SQLException e) {
+			}catch(SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		return 0;
+		return result;
 	}
 
 	@Override
@@ -55,28 +53,28 @@ public class BookDAOImpl implements BookDAO {
 		try {
 			con = Connector.open();
 			String sql = "update book";
-			sql += " set b_title=?,";
+			sql += " set b_tile=?,";
 			sql += " b_author=?,";
 			sql += " b_desc=?";
 			sql += " where b_num=?";
 			ps = con.prepareStatement(sql);
-			ps.setString(1, book.get("b_title").toString());
+			ps.setString(1, book.get("b_tile").toString());
 			ps.setString(2, book.get("b_author").toString());
 			ps.setString(3, book.get("b_desc").toString());
-			ps.setInt(4, (int) book.get("b_num"));
+			ps.setInt(4, (int)book.get("b_num"));
 			result = ps.executeUpdate();
 			con.commit();
-		} catch (Exception e) {
+		}catch(Exception e) {
 			e.printStackTrace();
-		} finally {
+		}finally {
 			try {
-				if (ps != null) {
+				if(ps!=null) {
 					ps.close();
 				}
-				if (con != null) {
+				if(con!=null) {
 					con.close();
 				}
-			} catch (SQLException e) {
+			}catch(SQLException e) {
 				e.printStackTrace();
 			}
 		}
@@ -94,18 +92,18 @@ public class BookDAOImpl implements BookDAO {
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, bNum);
 			result = ps.executeUpdate();
-			con.commit();
-		} catch (Exception e) {
+			con.rollback();
+		}catch(Exception e) {
 			e.printStackTrace();
-		} finally {
+		}finally {
 			try {
-				if (ps != null) {
+				if(ps!=null) {
 					ps.close();
 				}
-				if (con != null) {
+				if(con!=null) {
 					con.close();
 				}
-			} catch (SQLException e) {
+			}catch(SQLException e) {
 				e.printStackTrace();
 			}
 		}
@@ -118,31 +116,32 @@ public class BookDAOImpl implements BookDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
+		int result = 0;
 		try {
 			con = Connector.open();
-			String sql = "select b_num, b_title, b_author, b_credat, b_desc from book";
+			String sql = "select b_num, b_tile, b_author, b_credat, b_desc from book";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
-			while (rs.next()) {
-				Map<String, Object> map = new HashMap<>();
+			while(rs.next()) {
+				Map<String,Object> map = new HashMap<>();
 				map.put("b_num", rs.getInt("b_num"));
-				map.put("b_title", rs.getString("b_title"));
+				map.put("b_tile", rs.getString("b_tile"));
 				map.put("b_author", rs.getString("b_author"));
 				map.put("b_credat", rs.getString("b_credat"));
 				map.put("b_desc", rs.getString("b_desc"));
 				bookList.add(map);
 			}
-		} catch (Exception e) {
+		}catch(Exception e) {
 			e.printStackTrace();
-		} finally {
+		}finally {
 			try {
-				if (ps != null) {
+				if(ps!=null) {
 					ps.close();
 				}
-				if (con != null) {
+				if(con!=null) {
 					con.close();
 				}
-			} catch (SQLException e) {
+			}catch(SQLException e) {
 				e.printStackTrace();
 			}
 		}
@@ -154,56 +153,56 @@ public class BookDAOImpl implements BookDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-
+		int result = 0;
 		try {
 			con = Connector.open();
-			String sql = "select b_num, b_title, b_author, b_credat, b_desc from book where b_num=?";
+			String sql = "select b_num, b_tile, b_author, b_credat, b_desc from book where b_num=?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, bNum);
 			rs = ps.executeQuery();
-			if (rs.next()) {
-				Map<String, Object> map = new HashMap<>();
+			if(rs.next()) {
+				Map<String,Object> map = new HashMap<>();
 				map.put("b_num", rs.getInt("b_num"));
-				map.put("b_title", rs.getString("b_title"));
+				map.put("b_tile", rs.getString("b_tile"));
 				map.put("b_author", rs.getString("b_author"));
 				map.put("b_credat", rs.getString("b_credat"));
 				map.put("b_desc", rs.getString("b_desc"));
 				return map;
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (ps != null) {
-					ps.close();
-				}
-				if (con != null) {
-					con.close();
-				}
-			} catch (SQLException e) {
+		}catch(Exception e) {
 				e.printStackTrace();
+		}finally {
+				try {
+					if(ps!=null) {
+						ps.close();
+					}
+					if(con!=null) {
+						con.close();
+					}
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
 			}
-		}
-		return null;
+			return null;
 	}
-
 	public static void main(String[] args) {
 		BookDAO bdao = new BookDAOImpl();
-		Map<String, Object> map = new HashMap<>();
-		map.put("b_title", "자바의정석");
-		map.put("b_author", "남궁성");
-		map.put("b_desc", "자바의정석입니다.");
-		bdao.insertBook(map);
-		// System.out.println(bdao.selectBook(1));
+		Map<String,Object> map = new HashMap<>();
+		map.put("b_tile", "자바의정석" );
+		map.put("b_author", "남궁성" );
+		map.put("b_desc", "광고" );
+//		bdao.insertBook(map);
+//		List<Map<String,Object>> bookList = bdao.selectBookList(map);
+//		System.out.println(bookList);
 
-		// List<Map<String,Object>> bookList = bdao.selectBookList(map);
-		// System.out.println(bookList);
+//		System.out.println(bdao.selectBook(1));
 
-		// int result = bdao.deleteBook(21);
-		// System.out.println("삭제 갯수 : "+ result);
+//		int result = bdao.deleteBook(1);
+//		System.out.println("삭제 갯수 : " + result);
 
-		// map.put("b_num", 2);
-		// int result = bdao.updateBook(map);
-		// System.out.println("수정 갯수: " +result);
+		map.put("b_num", 2);
+		int result = bdao.updateBook(map);
+		System.out.println("수정 갯수 : " + result);
 	}
+
 }
