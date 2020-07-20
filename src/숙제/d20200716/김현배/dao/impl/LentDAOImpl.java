@@ -29,7 +29,6 @@ public class LentDAOImpl implements LentDAO {
 			ps.setInt(2, (int)lent.get("b_num"));
 			result = ps.executeUpdate();
 			conn.commit();
-			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -48,7 +47,7 @@ public class LentDAOImpl implements LentDAO {
 				}
 			}
 		}
-		return 0;
+		return result;
 	}
 
 	@Override
@@ -64,7 +63,6 @@ public class LentDAOImpl implements LentDAO {
 			ps.setInt(1, (int)lent.get("l_num"));
 			result = ps.executeUpdate();
 			conn.commit();
-			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -83,7 +81,7 @@ public class LentDAOImpl implements LentDAO {
 				}
 			}
 		}
-		return 0;
+		return result;
 	}
 
 	@Override
@@ -98,7 +96,6 @@ public class LentDAOImpl implements LentDAO {
 			ps.setInt(1, lNum);
 			result = ps.executeUpdate();
 			conn.commit();
-			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -117,11 +114,11 @@ public class LentDAOImpl implements LentDAO {
 				}
 			}
 		}
-		return 0;
+		return result;
 	}
 
 	@Override
-	public List<Map<String, Object>> selectLent(Map<String, Object> lent) {
+	public List<Map<String, Object>> selectLentList(Map<String, Object> lent) {
 		List<Map<String, Object>> mList = new ArrayList<>();
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -133,14 +130,13 @@ public class LentDAOImpl implements LentDAO {
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				Map<String, Object> map = new HashMap<>();
-				map.put("l_num", (int) rs.getObject("l_num"));
-				map.put("l_lentdate", rs.getObject("l_lentdate").toString());
-				map.put("l_recdate", rs.getObject("l_recdate").toString());
-				map.put("m_num", rs.getObject("m_num").toString());
-				map.put("b_num", rs.getObject("b_num").toString());
+				map.put("l_num", rs.getInt("l_num"));
+				map.put("l_lentdate", rs.getString("l_lentdate").toString());
+				map.put("l_recdate", rs.getString("l_recdate"));
+				map.put("m_num", rs.getInt("m_num"));
+				map.put("b_num", rs.getInt("b_num"));
 				mList.add(map);
 			}
-			return mList;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -166,7 +162,7 @@ public class LentDAOImpl implements LentDAO {
 				}
 			}
 		}
-		return null;
+		return mList;
 	}
 
 	@Override
@@ -182,13 +178,12 @@ public class LentDAOImpl implements LentDAO {
 			ps.setInt(1, lNum);
 			rs = ps.executeQuery();
 			if (rs.next()) {
-				map.put("l_num", (int) rs.getObject("l_num"));
+				map.put("l_num", rs.getInt("l_num"));
 				map.put("l_lentdate", rs.getObject("l_lentdate").toString());
-				map.put("l_recdate", rs.getObject("l_recdate").toString());
-				map.put("m_num", rs.getObject("m_num").toString());
-				map.put("b_num", rs.getObject("b_num").toString());
+				map.put("l_recdate", rs.getObject("l_recdate"));
+				map.put("m_num", rs.getInt("m_num"));
+				map.put("b_num", rs.getInt("b_num"));
 			}
-			return map;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -214,7 +209,7 @@ public class LentDAOImpl implements LentDAO {
 				}
 			}
 		}
-		return null;
+		return map;
 	}
 
 }
