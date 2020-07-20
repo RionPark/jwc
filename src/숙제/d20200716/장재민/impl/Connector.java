@@ -1,4 +1,4 @@
-package 숙제.d20200716.이상화;
+package 숙제.d20200716.장재민.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,12 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Connector {
-
-	private static final String URL ="jdbc:oracle:thin:@localhost:1521/xe";
+	private static final String URL = "jdbc:oracle:thin:@localhost:1522/xe";
 	private static final String ID = "c##test";
 	private static final String PWD = "test";
 	private static final String DRIVER_NAME = "oracle.jdbc.driver.OracleDriver";
-	
 	static {
 		try {
 			Class.forName(DRIVER_NAME);
@@ -20,6 +18,7 @@ public class Connector {
 			e.printStackTrace();
 		}
 	}
+	
 	public static Connection open() {
 		try {
 			Connection con = DriverManager.getConnection(URL, ID, PWD);
@@ -34,7 +33,7 @@ public class Connector {
 		Connection con = open();
 		try {
 			Statement stmt = con.createStatement();
-			String sql="select l_num, l_lentdate, l_recdate, m_num, b_num from lent";
+			String sql = "select l_num, l_lentdate, l_recdate, m_num, b_num from lent";
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next()) {
 				System.out.println(rs.getInt("l_num"));
@@ -43,4 +42,5 @@ public class Connector {
 			e.printStackTrace();
 		}
 	}
+
 }
