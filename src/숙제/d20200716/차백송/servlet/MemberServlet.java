@@ -1,4 +1,4 @@
-package 숙제.d20200716.정원영.homework.com.member.lib.servlet;
+package 숙제.d20200716.차백송.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
