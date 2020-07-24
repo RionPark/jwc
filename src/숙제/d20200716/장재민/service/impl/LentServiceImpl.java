@@ -4,11 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.member.lib.service.BookService;
-import com.member.lib.service.LentService;
-
-import 숙제.d20200716.차백송.com.member.lib.dao.LentDAO;
-import 차백송.com.member.lib.dao.impl.LentDAOImpl;
+import 숙제.d20200716.박윤상.Service.LentService;
+import 숙제.d20200716.박윤상.dao.Impl.LentDAO;
+import 숙제.d20200716.박윤상.dao.Impl.Impl.LentDAOImpl;
 
 public class LentServiceImpl implements LentService {
 

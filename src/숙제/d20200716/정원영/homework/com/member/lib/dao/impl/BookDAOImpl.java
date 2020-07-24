@@ -9,9 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.member.lib.common.Connector;
-
-import 숙제.d20200716.차백송.com.member.lib.dao.BookDAO;
+import 숙제.d20200716.정원영.homework.com.member.lib.common.Connector;
+import 숙제.d20200716.정원영.homework.com.member.lib.dao.BookDAO;
 
 public class BookDAOImpl implements BookDAO {
 	

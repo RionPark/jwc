@@ -4,10 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.member.lib.service.MemberService;
-
-import 숙제.d20200716.차백송.com.member.lib.dao.MemberDAO;
-import 차백송.com.member.lib.dao.impl.MemberDAOImpl;
+import 숙제.d20200716.박윤상.Service.MemberService;
+import 숙제.d20200716.박윤상.dao.Impl.MemberDAO;
+import 숙제.d20200716.박윤상.dao.Impl.Impl.MemberDAOImpl;
 
 public class MemberServiceImpl implements MemberService {
 	
@@ -36,9 +35,9 @@ public class MemberServiceImpl implements MemberService {
 		return rMap;
 	}
 
-	@Override
+	
 	public Map<String, Object> deleteMember(int mNum) {
-		int result = memberDAO.deleteMember(mNum);
+		int result = memberDAO.delectMember(mNum);
 		Map<String, Object> rMap = new HashMap<>();
 		rMap.put("msg", "멤버삭제 완료~");
 		if(result!=1) {
@@ -82,5 +81,11 @@ public class MemberServiceImpl implements MemberService {
 //		}
 //		System.out.println(memberService.selectMember(21));
 		
+	}
+
+	@Override
+	public Map<String, Object> delectMember(int mNum) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
