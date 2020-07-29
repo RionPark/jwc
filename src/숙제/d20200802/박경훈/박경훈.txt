@@ -1,1 +1,1 @@
-1. jsp문법중 scriptlet, expression, directive, declaretion에 대하여 ppt를 작성하여 제출해주세요.
+1. jsp문법중 scriptlet, expression, directive, declaration에 대하여 ppt를 작성하여 제출해주세요.
