@@ -1,0 +1,1 @@
+1. jsp문법중 scriptlet, express, directive, declaretion에 대하여 ppt를 작성하여 제출해주세요.
