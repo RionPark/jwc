@@ -1,8 +1,8 @@
 <%@page import="java.sql.PreparedStatement"%>
-<%@page import="com.ajax.test.common.Connector"%>
+<%@page import="com.so.Connector"%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.CallableStatement"%>
-<%@page import="com.ajax.test.servlet.InitServlet"%>
+<%@page import="com.so.InitServlet"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
