@@ -14,7 +14,7 @@
 </head>
 <body>
 <%
-Connection con = Connector.open();
+	Connection con = Connection.open();
 String sql = "{call prd_incress_salary(?,?)}";
 try {
 	PreparedStatement ps = con.prepareStatement(sql);
